@@ -20,7 +20,7 @@ def promedio
         end
     end
 
-promedio
+
 
 def inasistencias
     alum = read_alum('alumnos.csv') {}
@@ -37,7 +37,7 @@ def inasistencias
         end
     end
 end
-inasistencias
+
 
 def aprobados
     alum = read_alum('alumnos.csv') 
@@ -56,5 +56,26 @@ def aprobados
     end
 end
 
-aprobados
-
+condicion = 0 
+while condicion != 4
+    puts "Ingresa un número del 1 al 3, Escribe 4 para salir"
+    condicion = gets.chomp.to_i
+    case condicion
+    when 1
+        puts "1) Promedios de cada alumno:
+         "
+        promedio
+    when 2
+        puts "2) Quienes tienen inasistencias: 
+        "
+        inasistencias
+    when 3
+        puts "3) Conoce quienes aprobaron: 
+        "
+        aprobados
+    when 4
+        puts "Saliste"
+    else 
+        puts "Opción inválida, intenta nuevamente"
+    end
+end
