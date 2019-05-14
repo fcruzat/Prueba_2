@@ -21,3 +21,20 @@ def promedio
     end
 
 promedio
+
+def inasistencias
+    alum = read_alum('alumnos.csv') {}
+    alum.each do |arreglo|
+        nombre = arreglo[0]
+        "A" == 0
+        arreglo.each do |inasistencia|
+            contador = 0
+            
+            if inasistencia == "A"
+                contador += 1
+                puts "Alumno #{nombre} presenta #{contador} inasistencia"
+            end 
+        end
+    end
+end
+inasistencias
