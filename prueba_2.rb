@@ -38,3 +38,23 @@ def inasistencias
     end
 end
 inasistencias
+
+def aprobados
+    alum = read_alum('alumnos.csv') 
+    alum.each do |arreglo|
+        notas = arreglo[1..5]
+        suma = 0
+        notas.each do |nota|
+            suma += nota.to_i.to_f
+        end
+        division = suma/notas.length
+        if division >= 5.0
+            puts "Alumno #{arreglo[0]} fue aprobado con #{division}!!"
+        else
+            puts "Alumno #{arreglo[0]} fue desaprobado :("
+        end
+    end
+end
+
+aprobados
+
